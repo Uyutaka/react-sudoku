@@ -1,0 +1,196 @@
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 20px;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.top-left-block-border{
+  border: 1px solid #999;
+  border-top: 1px solid rgb(14, 239, 104);
+  border-left: 1px solid rgb(14, 239, 104);
+}
+
+.top-right-block-border{
+  border: 1px solid #999;
+  border-top: 1px solid rgb(14, 239, 104);
+  border-right: 1px solid rgb(14, 239, 104);
+}
+
+.bottom-left-block-border{
+  border: 1px solid #999;
+  border-left: 1px solid rgb(14, 239, 104);
+  border-bottom: 1px solid rgb(14, 239, 104);
+}
+.bottom-right-block-border{
+  border: 1px solid #999;
+  border-right: 1px solid rgb(14, 239, 104);
+  border-bottom: 1px solid rgb(14, 239, 104);
+}
+
+.bottom-board-right-block-border{
+  border-bottom: 3px solid rgb(239, 14, 14);
+  border-right: 1px solid rgb(14, 239, 104);
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+
+}
+.bottom-board-left-block-border{
+  border-bottom: 3px solid rgb(239, 14, 14);
+  border-left: 1px solid rgb(14, 239, 104);
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+}
+
+
+.right-board-bottom-block-border{
+  border-right: 3px solid rgb(239, 14, 14);
+  border-bottom: 1px solid rgb(14, 239, 104);
+  border-left: 1px solid #999;
+  border-top: 1px solid #999;
+}
+
+.right-board-top-block-border{
+  border-right: 3px solid rgb(239, 14, 14);
+  border-top: 1px solid rgb(14, 239, 104);
+  border-left: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.left-board-bottom-block-border{
+  border-left: 3px solid rgb(239, 14, 14);
+  border-bottom: 1px solid rgb(14, 239, 104);
+  border-top: 1px solid  #999;
+  border-right: 1px solid  #999;
+}
+
+.left-board-top-block-border{
+  border-left: 3px solid rgb(239, 14, 14);
+  border-top: 1px solid rgb(14, 239, 104);
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.top-board-right-block-border{
+  border-top: 3px solid rgb(239, 14, 14);
+  border-right: 1px solid rgb(14, 239, 104);
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
+}
+.top-board-left-block-border{
+  border-top: 3px solid rgb(239, 14, 14);
+  border-left: 1px solid rgb(14, 239, 104);
+  border-bottom: 1px solid #999;
+  border-right: 1px solid #999;
+}
+
+.top-block-border {
+  border: 1px solid #999;
+  border-top: 1px solid rgb(14, 239, 104);
+}
+.bottom-block-border {
+  border: 1px solid #999;
+  border-bottom: 1px solid rgb(14, 239, 104);
+}
+
+
+.right-block-border {
+  border: 1px solid #999;
+  border-right: 1px solid rgb(14, 239, 104);
+}
+
+.left-block-border {
+  background: #fff;
+  border: 1px solid #999;
+  border-left: 1px solid rgb(14, 239, 104);
+}
+
+.bottom-right-board-border {
+  border: 1px solid #999;
+  border-bottom: 3px solid rgb(239, 14, 14);
+  border-right: 3px solid rgb(239, 14, 14);
+}
+
+.bottom-left-board-border {
+  border: 1px solid #999;
+  border-bottom: 3px solid rgb(239, 14, 14);
+  border-left: 3px solid rgb(239, 14, 14);
+}
+.bottom-board-border {
+  border: 1px solid #999;
+  border-bottom: 3px solid rgb(239, 14, 14);
+}
+
+.left-board-border {
+  border: 1px solid #999;
+  border-left: 3px solid rgb(239, 14, 14);
+}
+
+.right-board-border {
+  border: 1px solid #999;
+  border-right: 3px solid rgb(239, 14, 14); 
+}
+
+.top-left-board-border {
+  border: 1px solid #999;
+  border-top: 3px solid rgb(239, 14, 14);
+  border-left: 3px solid rgb(239, 14, 14);
+}
+
+.top-right-board-border {
+  border: 1px solid #999;
+  border-top: 3px solid rgb(239, 14, 14);
+  border-right: 3px solid rgb(239, 14, 14);
+}
+
+.top-board-border {
+  border: 1px solid #999;
+  border-top: 3px solid rgb(239, 14, 14);
+}
+
+.normal-border{
+  border: 1px solid #999;
+}
+
+.square {
+  background: #fff;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
