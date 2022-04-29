@@ -15,8 +15,8 @@ type SquareProps = {
 export const Square = (props: SquareProps) => {
   const ctx = useContext(themeContext);
   let style = {};
-  if (!props.number) {
-    style = { backgroundColor: "rgba(255,0,0,0.5)" };
+  if (props.number !== 0) {
+    style = { backgroundColor: "rgba(255,0,0,0.3)" };
   }
 
   return (
@@ -27,23 +27,14 @@ export const Square = (props: SquareProps) => {
       maxLength={1}
       onInput={(e) => {
         const val = e.currentTarget.value;
-        if (val === "") {
-          console.log("BS?");
-        }
-        console.log("val", val);
         if (validateInput(val)) {
-          console.log("answer");
-          console.log(props.answer);
           if (val === props.answer?.toString()) {
             const num = ctx.remainingQuestion;
-            console.log(num);
             ctx.setRemainingQuestion(num - 1);
-            console.log(`ctx.dark: ${ctx.remainingQuestion}`);
             e.currentTarget.disabled = true;
             e.currentTarget.style.backgroundColor = "green";
             e.currentTarget.style.color = "white";
           } else {
-            console.log("incorrect");
             alert("間違っています");
             e.currentTarget.value = "";
           }
@@ -52,8 +43,8 @@ export const Square = (props: SquareProps) => {
           e.currentTarget.value = "";
         }
       }}
-      defaultValue={props.number}
-      disabled={props.number !== undefined}
+      defaultValue={props.number === 0 ? undefined : props.number}
+      disabled={props.number !== 0}
     ></input>
   );
 };

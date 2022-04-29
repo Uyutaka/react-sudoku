@@ -4,6 +4,14 @@ import { useEffect } from "react";
 
 const Index = () => {
   const ctx = useSudoku();
+
+  // Execute only after page is rendered
+  useEffect(() => {
+    // TODO Fetch question
+  }, []);
+
+
+  // Every time user inputs
   useEffect(() => {
     // Update the document title using the browser API
     document.title = `残り： ${ctx.remainingQuestion} 問`;
@@ -52,7 +60,7 @@ const Index = () => {
             "top-board-border",
             "top-right-board-border",
           ]}
-          numbers={[8, 5, 3, 4, 6, undefined, 9, 2, 7]}
+          numbers={[8, 5, 3, 4, 6, 0, 9, 2, 7]}
           answers={[8, 5, 3, 4, 6, 1, 9, 2, 7]}
         />
 
@@ -69,7 +77,7 @@ const Index = () => {
             "normal-border",
             "right-board-border",
           ]}
-          numbers={[9, 6, undefined, 3, 7, 8, 1, 5, 4]}
+          numbers={[9, 6, 0, 3, 7, 8, 1, 5, 4]}
           answers={[9, 6, 2, 3, 7, 8, 1, 5, 4]}
         />
         <Line
@@ -85,7 +93,7 @@ const Index = () => {
             "bottom-block-border",
             "right-board-bottom-block-border",
           ]}
-          numbers={[4, 1, 7, 5, 2, 9, 6, 8, undefined]}
+          numbers={[4, 1, 7, 5, 2, 9, 6, 8, 0]}
           answers={[4, 1, 7, 5, 2, 9, 6, 8, 3]}
         />
         <Line
@@ -101,7 +109,7 @@ const Index = () => {
             "top-block-border",
             "right-board-top-block-border",
           ]}
-          numbers={[6, 9, 1, 2, undefined, 3, 5, 7, 8]}
+          numbers={[6, 9, 1, 2, 0, 3, 5, 7, 8]}
           answers={[6, 9, 1, 2, 4, 3, 5, 7, 8]}
         />
         <Line
@@ -117,7 +125,7 @@ const Index = () => {
             "normal-border",
             "right-board-border",
           ]}
-          numbers={[2, 4, undefined, 7, 8, 6, 3, 1, 9]}
+          numbers={[2, 4, 0, 7, 8, 6, 3, 1, 9]}
           answers={[2, 4, 5, 7, 8, 6, 3, 1, 9]}
         />
         <Line
@@ -133,7 +141,7 @@ const Index = () => {
             "bottom-block-border",
             "right-board-bottom-block-border",
           ]}
-          numbers={[7, 3, 8, 9, 1, 5, 4, undefined, 2]}
+          numbers={[7, 3, 8, 9, 1, 5, 4, 0, 2]}
           answers={[7, 3, 8, 9, 1, 5, 4, 6, 2]}
         />
         <Line
@@ -149,7 +157,7 @@ const Index = () => {
             "top-block-border",
             "right-board-top-block-border",
           ]}
-          numbers={[5, undefined, 4, 1, 3, 2, 8, 9, 6]}
+          numbers={[5, 0, 4, 1, 3, 2, 8, 9, 6]}
           answers={[5, 7, 4, 1, 3, 2, 8, 9, 6]}
         />
         <Line
@@ -165,7 +173,7 @@ const Index = () => {
             "normal-border",
             "right-board-border",
           ]}
-          numbers={[1, 2, 6, undefined, 9, 4, 7, 3, 5]}
+          numbers={[1, 2, 6, 0, 9, 4, 7, 3, 5]}
           answers={[1, 2, 6, 8, 9, 4, 7, 3, 5]}
         />
         <Line
@@ -181,7 +189,7 @@ const Index = () => {
             "bottom-board-border",
             "bottom-right-board-border",
           ]}
-          numbers={[3, 8, undefined, 6, 5, 7, 2, 4, 1]}
+          numbers={[3, 8, 0, 6, 5, 7, 2, 4, 1]}
           answers={[3, 8, 9, 6, 5, 7, 2, 4, 1]}
         />
       </div>
