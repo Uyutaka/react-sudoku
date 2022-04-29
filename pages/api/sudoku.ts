@@ -1,15 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { board } from '..'
 
-type ResponseData = {
-    question: number[],
-    answer: number[],
-    remainingQuestion: number,
+export type SudokuResponse = {
+    readonly question: board,
+    readonly answer: board,
+    readonly remainingQuestion: number,
 }
 
 export default function handler(
     req: NextApiRequest,
-    res: NextApiResponse<ResponseData>
+    res: NextApiResponse<SudokuResponse>
 ) {
     res.status(200).json({
         question: [

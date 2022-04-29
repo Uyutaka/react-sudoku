@@ -1,5 +1,7 @@
 import { Square } from "./square";
 
+export type line = [number, number, number, number, number, number, number, number, number];
+
 type LineProps = {
   id: number;
   classNames: [
@@ -13,28 +15,8 @@ type LineProps = {
     string,
     string
   ];
-  numbers: [
-    number?,
-    number?,
-    number?,
-    number?,
-    number?,
-    number?,
-    number?,
-    number?,
-    number?
-  ];
-  answers: [
-    number,
-    number,
-    number,
-    number,
-    number,
-    number,
-    number,
-    number,
-    number
-  ];
+  numbers: line;
+  answers: line;
 };
 
 export const Line = (props: LineProps) => {
