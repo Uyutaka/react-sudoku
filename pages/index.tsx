@@ -45,7 +45,7 @@ const Index = () => {
   // Execute only after page is rendered
   useEffect(() => {
     const getSudoku = async () => {
-      await axios.get<SudokuResponse>("/api/sudoku")
+      await axios.get<SudokuResponse>("/api")
         .then(response => {
           ctx.setRemainingQuestion(response.data.remainingQuestion);
           setQuestion(response.data.question);
