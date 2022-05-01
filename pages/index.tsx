@@ -2,8 +2,7 @@ import { themeContext, useSudoku } from "../contexts/Sudoku";
 import { Line } from "../components/line";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { SudokuResponse } from "./api/sudoku";
-import { line } from "../components/line";
+import { Board, DEFAULT_BOARD, SudokuResponse } from "../src/types";
 
 enum State {
   Loading,
@@ -12,39 +11,17 @@ enum State {
   Done,
 }
 
-export type board = [
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-  number, number, number, number, number, number, number, number, number,
-];
-
-const defaultBoard: board = [
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0,
-];
-
 const Index = () => {
   const ctx = useSudoku();
   const [state, setState] = useState<State>(State.Loading);
-  const [question, setQuestion] = useState<board>(defaultBoard);
-  const [answer, setAnswer] = useState<board>(defaultBoard);
+  const [question, setQuestion] = useState<Board>(DEFAULT_BOARD);
+  const [answer, setAnswer] = useState<Board>(DEFAULT_BOARD);
 
   // Execute only after page is rendered
   useEffect(() => {
     const getSudoku = async () => {
+      // When local development
+      // await axios.get<SudokuResponse>("http://localhost:7075/api")
       await axios.get<SudokuResponse>("/api")
         .then(response => {
           ctx.setRemainingQuestion(response.data.remainingQuestion);
@@ -121,8 +98,8 @@ const Index = () => {
                 "top-board-border",
                 "top-right-board-border",
               ]}
-              numbers={question.slice(0, 9) as line}
-              answers={answer.slice(0, 9) as line}
+              numbers={question[0]}
+              answers={answer[0]}
             />
 
             <Line
@@ -138,8 +115,8 @@ const Index = () => {
                 "normal-border",
                 "right-board-border",
               ]}
-              numbers={question.slice(9, 18) as line}
-              answers={answer.slice(9, 18) as line}
+              numbers={question[1]}
+              answers={answer[1]}
             />
             <Line
               id={2}
@@ -154,8 +131,8 @@ const Index = () => {
                 "bottom-block-border",
                 "right-board-bottom-block-border",
               ]}
-              numbers={question.slice(18, 27) as line}
-              answers={answer.slice(18, 27) as line}
+              numbers={question[2]}
+              answers={answer[2]}
             />
             <Line
               id={3}
@@ -170,8 +147,8 @@ const Index = () => {
                 "top-block-border",
                 "right-board-top-block-border",
               ]}
-              numbers={question.slice(27, 36) as line}
-              answers={answer.slice(27, 36) as line}
+              numbers={question[3]}
+              answers={answer[3]}
             />
             <Line
               id={4}
@@ -186,8 +163,8 @@ const Index = () => {
                 "normal-border",
                 "right-board-border",
               ]}
-              numbers={question.slice(36, 45) as line}
-              answers={answer.slice(36, 45) as line}
+              numbers={question[4]}
+              answers={answer[4]}
             />
             <Line
               id={5}
@@ -202,8 +179,8 @@ const Index = () => {
                 "bottom-block-border",
                 "right-board-bottom-block-border",
               ]}
-              numbers={question.slice(45, 54) as line}
-              answers={answer.slice(45, 54) as line}
+              numbers={question[5]}
+              answers={answer[5]}
             />
             <Line
               id={6}
@@ -218,8 +195,8 @@ const Index = () => {
                 "top-block-border",
                 "right-board-top-block-border",
               ]}
-              numbers={question.slice(54, 63) as line}
-              answers={answer.slice(54, 63) as line}
+              numbers={question[6]}
+              answers={answer[6]}
             />
             <Line
               id={7}
@@ -234,8 +211,8 @@ const Index = () => {
                 "normal-border",
                 "right-board-border",
               ]}
-              numbers={question.slice(63, 72) as line}
-              answers={answer.slice(63, 72) as line}
+              numbers={question[7]}
+              answers={answer[7]}
             />
             <Line
               id={8}
@@ -250,8 +227,8 @@ const Index = () => {
                 "bottom-board-border",
                 "bottom-right-board-border",
               ]}
-              numbers={question.slice(72, 81) as line}
-              answers={answer.slice(72, 81) as line}
+              numbers={question[8]}
+              answers={answer[8]}
             />
           </div>
         </themeContext.Provider>
